@@ -1,1 +1,9 @@
-# Erl_HelloWorld
+helloword
+=====
+
+An OTP application
+
+Build
+-----
+
+    $ rebar3 compile
