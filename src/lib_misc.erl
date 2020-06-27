@@ -1,5 +1,5 @@
 -module(lib_misc).
--export([for/3,qsort/1,odds_and_evens/1,odds_and_evens_acc/3,odds_and_evens_acc/1]).
+-export([for/3,qsort/1,odds_and_evens/1,odds_and_evens_acc/3,odds_and_evens_acc/1,sqrt/1]).
 
 
 for(Max,Max,F)->[F(Max)];
@@ -25,3 +25,8 @@ odds_and_evens_acc([H|T],Odds,Evens)->
     end;
 odds_and_evens_acc([],Odds,Evens) ->
     {Odds,Evens}.
+
+sqrt(X) when X < 0 ->
+    erlang:error({squareRootNagativeArgument,X});
+sqrt(X)->
+    math:sqrt(X).
